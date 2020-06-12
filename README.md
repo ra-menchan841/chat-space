@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+
 ## messagesテーブル
 
 |Column|Type|Options|
@@ -36,6 +37,7 @@ Things you may want to cover:
 - belobgs_to :group
 - belongs_to :user
 
+
 ## groupsテーブル
 
 |Column|Type|Options|
@@ -45,6 +47,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
+
 
 ## usersテーブル
 
@@ -58,6 +61,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
+
 
 ## groups_usersテーブル
 
