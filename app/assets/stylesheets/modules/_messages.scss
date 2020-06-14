@@ -18,15 +18,23 @@
       height: 20px;
       width: 260px;
       margin: 0 auto;
-      background-color: #d8d8d8;
       display: flex;
       justify-content: space-between;
       &__name {
         width: 200px;
-        line-height: 20px;
+        color: #ffffff;
       }
       &__icons {
         width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .top-items__icons-edit {
+          margin-right: 5px;
+        }
+        a {
+          color: #ffffff;
+        }
       }
     }
   }

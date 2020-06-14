@@ -4,4 +4,10 @@
       .top-items__name
         AAA
       .top-items__icons
+        .top-items__icons-edit
+          = link_to "#", class: "edit" do
+            = icon('far', 'edit', class: "edit-icon")
+        .top-items__icons-cog
+          = link_to "#", class: "cog" do
+            = icon('fas', 'cog', class: "cog-icon")
   .side-bar__group-list
