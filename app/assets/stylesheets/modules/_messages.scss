@@ -23,6 +23,7 @@
       &__name {
         width: 200px;
         color: #ffffff;
+        font-size: 16px;
       }
       &__icons {
         width: 60px;
@@ -40,7 +41,19 @@
   }
   &__group-list {
     height: calc(100vh - 100px);
+    padding: 20px;
     background-color: #2f3e51;
+    .group {
+      color: #ffffff;
+      margin-bottom: 40px;
+      .group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      .group-new-message {
+        font-size: 11px;
+      }
+    }
   }
 }
 
