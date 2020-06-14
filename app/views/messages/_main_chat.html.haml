@@ -1,6 +1,19 @@
 .chat-main
   .chat-main__group-info
-    .chat-main__group-name
-    .chat-main__member-list
+    .chat-main__group-info__left
+      .chat-main__group-name
+        グループ名
+      %ul.chat-main__member-list
+        %li
+        Member :
+        %lu
+        test
+    = link_to "#", class: "edit" do
+      = "Edit"
   .chat-main__message-list
+    .message
+      .user-name
+      名前
+      .sentence
+      本文
   .chat-main__message-form
