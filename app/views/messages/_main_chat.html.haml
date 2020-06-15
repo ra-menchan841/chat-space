@@ -5,15 +5,40 @@
         グループ名
       %ul.chat-main__member-list
         %li
-        Member :
-        %lu
-        test
+          Member : 
+        %li
+          test
     = link_to "#", class: "edit" do
       = "Edit"
   .chat-main__message-list
     .message
-      .user-name
-      名前
+      .user-name-day
+        .user-name
+          名前
+        .day
+          日付
+        .time
+          時間
       .sentence
-      本文
+        本文
+    .message
+      .user-name-day
+        .user-name
+          名前
+        .day
+          日付
+        .time
+          時間
+      .sentence
+        本文
+    .message
+      .user-name-day
+        .user-name
+          名前
+        .day
+          日付
+        .time
+          時間
+      .sentence
+        本文
   .chat-main__message-form

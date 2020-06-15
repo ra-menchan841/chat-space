@@ -77,6 +77,7 @@
       .chat-main__member-list {
         color: #999999;
         font-size: 12px;
+        display: flex;
       }
     }
     .edit {
@@ -99,11 +100,27 @@
     padding-left: 40px;
     padding-top: 35px;
     .message {
-      background-color: yellow;
       padding-bottom: 46px;
-    }
-    .user-name {
-      color: #333333 16px;
+      .user-name-day {
+        display: flex;
+        align-items: center;
+        .user-name {
+          color: #333333;
+          font-size: 16px;
+        }
+        .day {
+          color: #999999;
+          font-size: 12px;
+        }
+        .time {
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+      .sentence {
+        color: #434A54;
+        font-size: 14px;
+      }
     }
   }
   &__message-form {
