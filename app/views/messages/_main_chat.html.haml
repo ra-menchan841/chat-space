@@ -42,3 +42,10 @@
       .sentence
         本文
   .chat-main__message-form
+    %form.new-message
+      .message-box
+        %input{type: "text", class: "type-message", placeholder: "type a message"}
+        %label{class:"image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "image-file"}
+      %input{type: "submit", class: "send", value: "Send"}

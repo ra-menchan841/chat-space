@@ -126,5 +126,43 @@
   &__message-form {
     height: 90px;
     background-color: #d2d2d2;
+
+    .new-message {
+      height: 90px;
+      display: flex;
+      padding-left: 40px;
+      padding-right: 40px;
+      align-items: center;
+      .message-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        .type-message {
+          height: 50px;
+          width: 100%;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-style: none;
+        }
+        .image {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+        .image-file {
+          display: none;
+        }
+      }
+      .send {
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        border-style: none;
+        background-color: #38aef0;
+        color: #ffffff;
+      }
+    }
   }
 }
+
