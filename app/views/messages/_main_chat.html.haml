@@ -1,0 +1,37 @@
+.main-chat
+  .main-top
+    .main-top__group
+      .main-top__group__name
+        グループ名
+      %ul.main-top__group__member-list
+        %li
+          Member：
+        %li
+          test
+    = link_to "#", class: "main-top__edit" do
+      = "Edit"
+  .main-message-list
+    .main-message-list__message
+      %ul.main-message-list__message__user-name
+        %li.user-name
+          ユーザー名
+        %li.day
+          2020/06/18 00:00:00
+      .main-message-list__message__sentence
+        これは本文です
+    .main-message-list__message
+      %ul.main-message-list__message__user-name
+        %li.user-name
+          ユーザー名
+        %li.day
+          2020/06/18 00:00:00
+      .main-message-list__message__sentence
+        これは本文です
+  .main-form
+    %form.main-form__box
+      .main-form__box__input
+        %input{type: "text", class: "type-message", placeholder: "type a message"}
+        %label{class:"image-icon"}
+          = icon('far', 'image')
+          %input{type: "file", class: "image-file"}
+      %input{type: "submit", class: "main-form__box__send", value: "Send"}

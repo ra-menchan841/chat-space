@@ -1,0 +1,23 @@
+.side-bar
+  .side-top
+    .side-top__items
+      .side-top__items__user-name
+        ユーザー名
+      %ul.side-top__items__icons
+        %li
+          = link_to "#", class: "edit" do
+            = icon('far', 'edit')
+        %li
+          = link_to "#" do
+            = icon('fas', 'cog')
+  .side-groups
+    .side-groups__group
+      .side-groups__group__name
+        techcamp
+      .side-groups__group__new-message
+        まだメッセージがありません
+    .side-groups__group
+      .side-groups__group__name
+        techcamp
+      .side-groups__group__new-message
+        まだメッセージがありません
