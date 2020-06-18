@@ -1,28 +1,23 @@
 .side-bar
-  .side-bar__user-name
-    .top-items
-      .top-items__name
-        AAA
-      .top-items__icons
-        .top-items__icons-edit
+  .side-top
+    .side-top__items
+      .side-top__items__user-name
+        ユーザー名
+      %ul.side-top__items__icons
+        %li
           = link_to "#", class: "edit" do
-            = icon('far', 'edit', class: "edit-icon")
-        .top-items__icons-cog
-          = link_to "#", class: "cog" do
-            = icon('fas', 'cog', class: "cog-icon")
-  .side-bar__group-list
-    .group
-      .group-name
+            = icon('far', 'edit')
+        %li
+          = link_to "#" do
+            = icon('fas', 'cog')
+  .side-groups
+    .side-groups__group
+      .side-groups__group__name
         techcamp
-      .group-new-message
+      .side-groups__group__new-message
         まだメッセージがありません
-    .group
-      .group-name
+    .side-groups__group
+      .side-groups__group__name
         techcamp
-      .group-new-message
-        まだメッセージがありません
-    .group
-      .group-name
-        techcamp
-      .group-new-message
+      .side-groups__group__new-message
         まだメッセージがありません

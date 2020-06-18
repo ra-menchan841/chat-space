@@ -1,3 +1,12 @@
+$sideFontColor: #ffffff;
+$mainUserName: #333333;
+$mainBtnColor: #38aef0;
+
+@mixin alineItemsCenter {
+  display: flex;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,48 +18,57 @@
 .side-bar {
   height: 100vh;
   width: 300px;
-  &__user-name {
+
+  .side-top {
     height: 100px;
     background-color: #253141;
-    display: flex;
-    align-items: center;
-    .top-items {
+    @include alineItemsCenter;
+
+    &__items {
       height: 20px;
-      width: 260px;
-      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
-      &__name {
+      line-height: 20px;
+
+      &__user-name {
         width: 200px;
-        color: #ffffff;
+        color: $sideFontColor;
         font-size: 16px;
+        font-weight: bold;
       }
+    
       &__icons {
         width: 60px;
-        display: flex;
+        @include alineItemsCenter;
         justify-content: flex-end;
-        align-items: center;
-        .top-items__icons-edit {
+
+        .edit {
           margin-right: 5px;
         }
+
         a {
-          color: #ffffff;
+          color: $sideFontColor;
         }
       }
     }
   }
-  &__group-list {
+  
+  .side-groups {
     height: calc(100vh - 100px);
     padding: 20px;
     background-color: #2f3e51;
-    .group {
-      color: #ffffff;
+
+    &__group {
       margin-bottom: 40px;
-      .group-name {
-        font-size: 15px;
+      color: $sideFontColor;
+
+      &__name {
         margin-bottom: 5px;
+        font-size: 15px;
       }
-      .group-new-message {
+
+      &__new-message {
         font-size: 11px;
       }
     }
@@ -59,110 +77,120 @@
 
 .chat-main {
   height: 100vh;
-  width: calc(100vw - 300px);
-  &__group-info {
+  width: calc(100% - 300px);
+
+  .main-top {
     height: 100px;
+    @include alineItemsCenter;
+    justify-content: space-between;
     background-color: #ffffff;
     border: #eeeeee;
-    display: flex;
-    justify-content: space-between;
-    .chat-main__group-info__left {
+
+    &__group {
       margin-left: 40px;
-      .chat-main__group-name {
-        font-size: 20px;
-        color: #333333;
+
+      &__name {
         padding-top: 35px;
         margin-bottom: 15px;
+        font-size: 20px;
+        color: $mainUserName;
       }
-      .chat-main__member-list {
+
+      &__member-list {
         color: #999999;
         font-size: 12px;
         display: flex;
       }
     }
-    .edit {
+
+    &__edit {
       height: 40px;
       width: 72px;
-      color: #38aef0;
-      border: 1px solid;
-      font-size: 16px;
-      margin-right: 40px;
-      margin-top: 28px;
-      padding-left: 20px;
-      padding-right: 20px;
+      margin: 28px 40px;
+      padding: 0 20px;
       line-height: 40px;
+      font-size: 16px;
+      border: 1px solid;
+      color: $mainBtnColor;
       text-decoration: none;
     }
   }
-  &__message-list {
+
+  .main-message-list {
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    padding-left: 40px;
-    padding-top: 35px;
-    .message {
+    padding: 35px 40px;
+
+    &__message {
       padding-bottom: 46px;
-      .user-name-day {
-        display: flex;
-        align-items: center;
+
+      &__user-name {
+        @include alineItemsCenter;
+
         .user-name {
-          color: #333333;
+          color: $mainUserName;
           font-size: 16px;
         }
+
         .day {
           color: #999999;
           font-size: 12px;
-        }
-        .time {
-          color: #999999;
-          font-size: 12px;
+          margin-left: 5px;
         }
       }
-      .sentence {
-        color: #434A54;
+
+      &__sentence {
+        color: #434a54;
         font-size: 14px;
       }
     }
   }
-  &__message-form {
+}
+
+  .main-form {
     height: 90px;
     background-color: #d2d2d2;
 
-    .new-message {
+    &__box {
       height: 90px;
-      display: flex;
-      padding-left: 40px;
-      padding-right: 40px;
-      align-items: center;
-      .message-box {
-        display: flex;
-        justify-content: space-between;
+      padding: 0 40px;
+      @include alineItemsCenter;
+
+      &__input {
         width: 100%;
+        display: flex;
         position: relative;
+
         .type-message {
           height: 50px;
           width: 100%;
-          padding-left: 10px;
-          padding-right: 10px;
+          padding: 0 40px 0 10px;
           border-style: none;
         }
-        .image {
+
+        .image-icon {
           position: absolute;
-          top: 10px;
+          top: 6px;
           right: 10px;
+          font-size: 25px;
+          cursor: pointer;
         }
+
         .image-file {
           display: none;
         }
       }
-      .send {
+
+      &__send {
         height: 50px;
         width: 100px;
         margin-left: 15px;
+        padding: 0 30px;
         border-style: none;
-        background-color: #38aef0;
+        background-color: $mainBtnColor;
         color: #ffffff;
+        cursor: pointer;
       }
     }
   }
-}
 
