@@ -61,7 +61,6 @@ $mainBtnColor: #38aef0;
 
     &__group {
       margin-bottom: 40px;
-      color: $sideFontColor;
 
       &__name {
         margin-bottom: 5px;
@@ -70,6 +69,11 @@ $mainBtnColor: #38aef0;
 
       &__new-message {
         font-size: 11px;
+      }
+
+      a {
+        color: $sideFontColor;
+        text-decoration: none;
       }
     }
   }
