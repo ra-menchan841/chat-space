@@ -2,7 +2,7 @@
   .main-top
     .main-top__group
       .main-top__group__name
-        グループ名
+        = @group.name
       %ul.main-top__group__member-list
         %li
           Member：
@@ -28,11 +28,11 @@
       .main-message-list__message__sentence
         これは本文です
   .main-form
-    .main-form__box
-      .main-form__box__input
-        = form_for [@group, @message] do |f|
-          = f.text_field :text, class: 'type-message', placeholder: 'type a message'
-          = f.label :image, class: 'image-icon'
+    = form_for [@group, @message] do |f|
+      .main-form__box
+        .main-form__box__input
+          = f.text_field :body, class: 'type-message', placeholder: 'type a message'
+          = f.label :image, class: 'image-icon' do
             = icon('far', 'image')
             = f.file_field :image, class: 'image-file'
-      = f.submit 'Send', class: 'main-form__box__send'
+        = f.submit 'Send', class: 'main-form__box__send'
