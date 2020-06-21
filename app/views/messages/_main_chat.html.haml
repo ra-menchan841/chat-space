@@ -11,22 +11,7 @@
     = link_to "#", class: "main-top__edit" do
       = "Edit"
   .main-message-list
-    .main-message-list__message
-      %ul.main-message-list__message__user-name
-        %li.user-name
-          ユーザー名
-        %li.day
-          2020/06/18 00:00:00
-      .main-message-list__message__sentence
-        これは本文です
-    .main-message-list__message
-      %ul.main-message-list__message__user-name
-        %li.user-name
-          ユーザー名
-        %li.day
-          2020/06/18 00:00:00
-      .main-message-list__message__sentence
-        これは本文です
+    = render @messages
   .main-form
     = form_for [@group, @message] do |f|
       .main-form__box
