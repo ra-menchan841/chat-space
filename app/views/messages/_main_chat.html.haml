@@ -6,9 +6,10 @@
       %ul.main-top__group__member-list
         %li
           Member：
-        %li
-          test
-    = link_to "#", class: "main-top__edit" do
+        - @group.users.each do |user|
+          %li.users
+            = user.name
+    = link_to edit_group_path(@group.id), class: "main-top__edit" do
       = "Edit"
   .main-message-list
     = render @messages

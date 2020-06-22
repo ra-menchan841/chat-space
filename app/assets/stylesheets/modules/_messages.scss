@@ -105,6 +105,13 @@ $mainBtnColor: #38aef0;
         font-size: 12px;
         display: flex;
       }
+      li {
+        list-style: none;
+      }
+      
+      .users {
+        margin-right: 5px;
+      }
     }
 
     &__edit {
