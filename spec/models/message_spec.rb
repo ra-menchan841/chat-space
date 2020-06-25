@@ -32,15 +32,15 @@ RSpec.describe Message, type: :model do
       end
 
       it "group_idが無いと保存できない" do
-        message = build(:message, group_id: nil)
+        message = build(:message, group: nil)
         message.valid?
-        expect(message.errors[:group_id]).to include("を入力してください")
+        expect(message.errors[:group]).to include("を入力してください")
       end
 
       it "user_idが無いと保存できない" do
-        message = build(:message, user_id: nil)
+        message = build(:message, user: nil)
         message.valid?
-        expect(message.errors[:user_id]).to include("を入力してください")
+        expect(message.errors[:user]).to include("を入力してください")
       end
 
     end
