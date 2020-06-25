@@ -2,36 +2,23 @@
   .main-top
     .main-top__group
       .main-top__group__name
-        グループ名
+        = @group.name
       %ul.main-top__group__member-list
         %li
           Member：
-        %li
-          test
-    = link_to "#", class: "main-top__edit" do
+        - @group.users.each do |user|
+          %li.users
+            = user.name
+    = link_to edit_group_path(@group.id), class: "main-top__edit" do
       = "Edit"
   .main-message-list
-    .main-message-list__message
-      %ul.main-message-list__message__user-name
-        %li.user-name
-          ユーザー名
-        %li.day
-          2020/06/18 00:00:00
-      .main-message-list__message__sentence
-        これは本文です
-    .main-message-list__message
-      %ul.main-message-list__message__user-name
-        %li.user-name
-          ユーザー名
-        %li.day
-          2020/06/18 00:00:00
-      .main-message-list__message__sentence
-        これは本文です
+    = render @messages
   .main-form
-    %form.main-form__box
-      .main-form__box__input
-        %input{type: "text", class: "type-message", placeholder: "type a message"}
-        %label{class:"image-icon"}
-          = icon('far', 'image')
-          %input{type: "file", class: "image-file"}
-      %input{type: "submit", class: "main-form__box__send", value: "Send"}
+    = form_for [@group, @message] do |f|
+      .main-form__box
+        .main-form__box__input
+          = f.text_field :body, class: 'type-message', placeholder: 'type a message'
+          = f.label :image, class: 'image-icon' do
+            = icon('far', 'image')
+            = f.file_field :image, class: 'image-file'
+        = f.submit 'Send', class: 'main-form__box__send'
