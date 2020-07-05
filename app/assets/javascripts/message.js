@@ -1,13 +1,45 @@
 $(function(){
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
-      var html = //メッセージに画像が含まれる場合のHTMLを作る
+      var html =
+        `<div class="main-message-list__message">
+          <ul class="main-message-list__message__user-name">
+            <li class="user-name">
+            ${message.user_name}
+            </li>
+            <li class="day">
+            ${message.created_at}
+            </li>
+          </ul>
+          <div class="main-message-list__message__sentence">
+          ${message.body}
+          </div>
+          <div class="main-message-list__message__image">
+          ${message.image}
+          </div>
+        </div>`
+      return html;
     } else {
-      var html = //メッセージに画像が含まれない場合のHTMLを作る
-    }
-    return html
-  }
+      var html =
+        `<div class="main-message-list__message">
+          <ul class="main-message-list__message__user-name">
+            <li class="user-name">
+            ${message.user_name}
+            </li>
+            <li class="day">
+            ${message.created_at}
+            </li>
+          </ul>
+          <div class="main-message-list__message__sentence">
+          ${message.body}
+          </div>
+        </div>`
+      return html;
+    };
+  };
+
+
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -19,6 +51,12 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
-    });
+    })
+      .done(function(data){
+        var html = buildHTML(data);
+        $('.main-message-list').append(html);
+        $('.main-message-list').animate({ scrollTop: $('.main-message-list')[0].scrollHeight});
+        $('form')[0].reset();
+      })
   });
 });
