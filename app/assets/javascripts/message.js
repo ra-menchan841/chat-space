@@ -42,8 +42,6 @@ $(function(){
     };
   };
 
-
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -65,6 +63,7 @@ $(function(){
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
-    });
+        $('.main-form__box__send').prop("disabled", false);
+      });
   });
 });
