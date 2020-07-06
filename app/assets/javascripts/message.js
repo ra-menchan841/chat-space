@@ -57,6 +57,7 @@ $(function(){
         $('.main-message-list').append(html);
         $('.main-message-list').animate({ scrollTop: $('.main-message-list')[0].scrollHeight});
         $('form')[0].reset();
+        $('.main-form__box__send').prop("disabled", false);
       })
   });
 });
