@@ -59,5 +59,8 @@ $(function(){
         $('form')[0].reset();
         $('.main-form__box__send').prop("disabled", false);
       })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+    });
   });
 });
