@@ -15,7 +15,7 @@ $(function(){
           ${message.body}
           </div>
           <div class="main-message-list__message__image">
-          ${message.image}
+          <img src=${message.image}>
           </div>
         </div>`
       return html;
